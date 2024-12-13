@@ -1,14 +1,42 @@
-document.getElementById('reveal-button').addEventListener('click', function() {
-    const heartContainer = document.querySelector('.heart-container');
-    const message = document.getElementById('message');
-    const text = document.getElementById('text');
-    const button = document.getElementById('reveal-button');
+const pieces = document.querySelectorAll('.piece');
+const dropArea = document.querySelector('.drop-area');
+const message = document.getElementById('message');
 
-    // Hiện trái tim và lời tỏ tình
-    heartContainer.classList.remove('hidden');
-    message.innerHTML = "Cảm xúc của tớ dành cho cậu... 💕";
-    text.style.display = 'none';
-
-    // Ẩn nút sau khi bấm
-    button.style.display = 'none';
+// Kéo và thả
+pieces.forEach(piece => {
+    piece.addEventListener('dragstart', dragStart);
 });
+
+dropArea.addEventListener('dragover', dragOver);
+dropArea.addEventListener('drop', dropPiece);
+
+let correctPieces = 0;
+
+function dragStart(event) {
+    event.dataTransfer.setData('text', event.target.id);
+}
+
+function dragOver(event) {
+    event.preventDefault();
+}
+
+function dropPiece(event) {
+    event.preventDefault();
+    const pieceId = event.dataTransfer.getData('text');
+    const piece = document.getElementById(pieceId);
+
+    // Kiểm tra nếu chưa thả
+    if (!piece.classList.contains('placed')) {
+        dropArea.appendChild(piece);
+        piece.classList.add('placed');
+        correctPieces++;
+
+        // Hiển thị thông báo khi hoàn thành
+        if (correctPieces === 4) {
+            setTimeout(() => {
+                dropArea.style.display = 'none';
+                message.classList.remove('hidden');
+            }, 500);
+        }
+    }
+}
