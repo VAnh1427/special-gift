@@ -3,21 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surprise for You</title>
+    <title>Surprise Puzzle</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1 id="message">Hey, Chanh xinh gái 😊</h1>
-        <p id="text">Tớ có một điều muốn chia sẻ...</p>
-        <button id="reveal-button">Nhấn vào đây để khám phá 💌</button>
-        <div class="heart-container hidden">
-            <div class="heart"></div>
-            <p class="love-message">"Tớ đã nghĩ rất nhiều, và điều tớ chắc chắn nhất là... Tớ thích cậu thật nhiều. Hãy để tớ ở cạnh cậu nhé?"</p>
+        <h1>Chào bạn! 👋</h1>
+        <p>Tớ có một thứ muốn nói cho cậu. Hãy ghép các mảnh này lại nhé! 🧩</p>
+        <div class="puzzle-container">
+            <div class="piece" draggable="true" id="piece1"></div>
+            <div class="piece" draggable="true" id="piece2"></div>
+            <div class="piece" draggable="true" id="piece3"></div>
+            <div class="piece" draggable="true" id="piece4"></div>
+        </div>
+        <div class="drop-area">
+            <p>Kéo các mảnh vào đây để ghép trái tim!</p>
+        </div>
+        <div id="message" class="hidden">
+            <h2>🎉 Chúc mừng! 🎉</h2>
+            <p>"Tớ thích cậu rất nhiều, Tớ thích cậu, không phải vì cậu hoàn hảo, mà vì cậu là cậu" 💖</p>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
+
