@@ -1,57 +1,79 @@
+/* Thiết lập chung */
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #ff758c, #ff7eb3);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
     text-align: center;
+    overflow: hidden;
 }
 
 .container {
     background: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 300px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    max-width: 350px;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 h1 {
-    color: #ff6b6b;
     font-size: 2em;
-    animation: fadeIn 2s ease-in;
+    color: #ff416c;
+    font-family: 'Dancing Script', cursive;
+    margin: 0;
+    animation: fadeIn 2s ease-in-out;
 }
 
 p {
     font-size: 1.2em;
     color: #333;
+    margin-top: 10px;
+    animation: fadeInText 2s ease-in-out 1s;
     opacity: 0;
-    animation: fadeInText 2s ease-in 1s forwards;
 }
 
 button {
-    background-color: #ff6b6b;
+    background: #ff416c;
     color: white;
     border: none;
     padding: 12px 20px;
-    font-size: 1em;
-    border-radius: 5px;
+    font-size: 1.1em;
+    border-radius: 25px;
     cursor: pointer;
     margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
 }
 
 button:hover {
-    background-color: #ff4a4a;
+    background: #e13e5c;
+    transform: scale(1.1);
+}
+
+.heart-container {
+    margin-top: 30px;
 }
 
 .heart {
-    width: 100px;
-    height: 100px;
-    background-color: #ff6b6b;
+    width: 120px;
+    height: 120px;
+    background-color: #ff416c;
     clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 50% 75%, 18% 100%, 0% 38%);
     margin: 20px auto;
     animation: beat 1s infinite;
+}
+
+.love-message {
+    font-size: 1.1em;
+    color: #555;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeInText 2s ease-in-out 1s forwards;
 }
 
 .hidden {
@@ -76,4 +98,3 @@ button:hover {
         transform: scale(1.2);
     }
 }
-
